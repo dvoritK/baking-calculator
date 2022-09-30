@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <select name="בחר/י חומר גלם">
+        <option value="קמח לבן">בחר/י חומר גלם</option>
+        <option value="">אבקת סוכר</option>
+        <option value="">סוכר לבן</option>
+        <option value="">סוכר דמררה</option>
+        <option value="">סוכר חום כוס דחוסה</option>
+        <option value="">סולת</option>
+        <option value="">פודינג</option>
+        <option value="">קוקוס</option>
+        <option value="">קורנפלור</option>
+        <option value="קמח לבן">קמח לבן</option>
+        <option value="">קמח מלא</option>
+        <option value="">קקאו</option>
+        <option value="">שיבולת שועל</option>
+        <option value="">שקדים / אגוזים טחונים</option>
+      </select>
     </div>
   );
 }
