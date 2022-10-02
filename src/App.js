@@ -8,6 +8,10 @@ function App() {
 
   function convertToCup() {
     switch ($("#ingredient").val()) {
+      case "coconut":
+      case "almonds":
+        setCupConvertion(inputValue / 100);
+        break;
       case "sugarPowder":
         setCupConvertion(inputValue / 120);
         break;
@@ -70,7 +74,9 @@ function App() {
           <option value="almonds">שקדים / אגוזים טחונים</option>
         </select>
       </form>
-      <p>{cupConvertion}</p>
+      <p>
+        <span>מספר כוסות:</span> <span>{cupConvertion}</span>
+      </p>
     </div>
   );
 }
