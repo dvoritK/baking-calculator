@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import $ from "jquery";
+import "./DryIngredients.css";
 
 function DryIngredients() {
   let [inputValue, setInputValue] = useState("");
@@ -50,15 +51,16 @@ function DryIngredients() {
   }
   return (
     <div className="DryIngredients">
-      <h2>חומרים יבשים</h2>
+      <h2 className="heading-dry">חומרים יבשים</h2>
       <form onSubmit={handleClick}>
-        <input type="submit" value="חשב" />
+        <input type="submit" value="חשב" className="btn-calc input-box" />
         <input
           type="number"
           placeholder="כמות בגרמים"
           onChange={handleChange}
+          className="input-box"
         ></input>
-        <select name="בחר/י חומר גלם" id="dryIngredient">
+        <select name="בחר/י חומר גלם" id="dryIngredient" className="input-box">
           <option value="chooseIngredient">בחר/י חומר גלם</option>
           <option value="sugarPowder" id="sugarPowder">
             אבקת סוכר

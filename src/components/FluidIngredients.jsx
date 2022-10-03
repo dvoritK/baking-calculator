@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import $ from "jquery";
+import "./FluidIngredients.css";
 
 function Fluidingredients() {
   let [wetIngredient, setWetIngredient] = useState("");
@@ -49,15 +50,16 @@ function Fluidingredients() {
   }
   return (
     <div className="FluidIngredients">
-      <h2>נוזלים, רטבים וממרחים</h2>
+      <h2 className="heading-fluid">נוזלים, רטבים וממרחים</h2>
       <form onSubmit={handleSubmit}>
-        <input type="submit" value="חשב" />
+        <input type="submit" value="חשב" className="btn-calc input-box" />
         <input
           type="number"
           placeholder="כמות במיליליטר"
           onChange={handleChange}
+          className="input-box"
         ></input>
-        <select name="בחר/י חומר גלם" id="wetIngredient">
+        <select name="בחר/י חומר גלם" id="wetIngredient" className="input-box">
           <option value="chooseIngredient">בחר/י חומר גלם</option>
           <option value="honey">דבש/ סילאן</option>
           <option value="mapleSyrup">מייפל סירופ</option>
