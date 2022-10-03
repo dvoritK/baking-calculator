@@ -11,10 +11,31 @@ function Fluidingredients() {
     setInputValue(amount);
   }
 
-  function convertMilToCup() {
+  function convertMillToCup() {
     switch (ingredients) {
       case "oil":
         setWetIngredient(inputValue / 200);
+        break;
+      case "mapleSyrup":
+      case "juice":
+      case "tehina":
+      case "milk":
+      case "water":
+        setWetIngredient(inputValue / 240);
+        break;
+      case "sweetCream":
+      case "peanutButter":
+        setWetIngredient(inputValue / 250);
+        break;
+      case "nutella":
+        setWetIngredient(inputValue / 280);
+        break;
+      case "honey":
+        setWetIngredient(inputValue / 360);
+        break;
+      case "coconutMilk":
+      case "halvaSpread":
+        setWetIngredient(inputValue / 400);
         break;
       default:
         console.log("please type amount");
@@ -24,11 +45,11 @@ function Fluidingredients() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    convertMilToCup();
+    convertMillToCup();
   }
   return (
     <div className="FluidIngredients">
-      <h2>חומרים נוזליים</h2>
+      <h2>נוזלים, רטבים וממרחים</h2>
       <form onSubmit={handleSubmit}>
         <input type="submit" value="חשב" />
         <input
@@ -42,14 +63,12 @@ function Fluidingredients() {
           <option value="mapleSyrup">מייפל סירופ</option>
           <option value="oil">שמן</option>
           <option value="sweetCream">שמנת מתוקה</option>
-          <option value="sourCream">שמנת חמוצה</option>
-          <option value="yogurt">יוגורט</option>
+          <option value="peanutButter">חמאת בוטנים</option>
           <option value="milk">חלב</option>
           <option value="water">מים</option>
           <option value="juice">מיץ</option>
-          <option value="tehina">טחינה</option>
+          <option value="tehina">טחינה גולמית</option>
           <option value="coconutMilk">חלב/קרם קוקוס</option>
-          <option value="condensedMilk">חלב מרוכז</option>
           <option value="halvaSpread">ממרח חלבה</option>
           <option value="nutella">נוטלה</option>
         </select>
