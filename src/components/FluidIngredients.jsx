@@ -5,6 +5,7 @@ import "./FluidIngredients.css";
 function Fluidingredients() {
   let [wetIngredient, setWetIngredient] = useState("");
   let [inputValue, setInputValue] = useState("");
+  let [calculation, setCalculation] = useState(false);
   let ingredients = $("#wetIngredient").val();
 
   function handleChange(event) {
@@ -47,6 +48,7 @@ function Fluidingredients() {
   function handleSubmit(event) {
     event.preventDefault();
     convertMillToCup();
+    setCalculation(true);
   }
   return (
     <div className="FluidIngredients">
@@ -75,9 +77,13 @@ function Fluidingredients() {
           <option value="nutella">נוטלה</option>
         </select>
       </form>
-      <p>
-        <span>מספר כוסות</span> <span>{wetIngredient}</span>
-      </p>
+      {calculation ? (
+        <p>
+          <span>מספר כוסות:</span> <span>{wetIngredient}</span>
+        </p>
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 }

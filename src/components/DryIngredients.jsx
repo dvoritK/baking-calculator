@@ -5,10 +5,11 @@ import "./DryIngredients.css";
 function DryIngredients() {
   let [inputValue, setInputValue] = useState("");
   let [cupConvertion, setCupConvertion] = useState("");
+  let [calculation, setCalculation] = useState(false);
   let ingredients = $("#dryIngredient").val();
 
   function handleChange(event) {
-    const amount = event.target.value;
+    let amount = event.target.value;
     setInputValue(amount);
   }
 
@@ -46,8 +47,9 @@ function DryIngredients() {
   function handleClick(event) {
     event.preventDefault();
     convertGramsToCup();
+    setCalculation(true);
     setInputValue("");
-    // ingredients = "chooseIngredient";
+    ingredients = "chooseIngredient";
   }
   return (
     <div className="DryIngredients">
@@ -79,9 +81,13 @@ function DryIngredients() {
           <option value="almonds">שקדים / אגוזים טחונים</option>
         </select>
       </form>
-      <p>
-        <span>מספר כוסות:</span> <span>{cupConvertion}</span>
-      </p>
+      {calculation ? (
+        <p>
+          <span>מספר כוסות:</span> <span>{cupConvertion}</span>
+        </p>
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 }
