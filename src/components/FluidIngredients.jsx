@@ -7,6 +7,7 @@ function Fluidingredients() {
   let [inputValue, setInputValue] = useState("");
   let [calculation, setCalculation] = useState(false);
   let ingredients = $("#wetIngredient").val();
+  let fixedNum = (Math.round(wetIngredient * 100) / 100).toFixed(2);
 
   function handleChange(event) {
     const amount = event.target.value;
@@ -53,8 +54,8 @@ function Fluidingredients() {
   return (
     <div className="FluidIngredients">
       <h2 className="heading-fluid">נוזלים, רטבים וממרחים</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="submit" value="חשב" className="btn-calc input-box" />
+      <form onSubmit={handleSubmit} className="form-fluid-ing">
+        <input type="submit" value="חשב" className="btn-calc-fluid input-box" />
         <input
           type="number"
           placeholder="כמות במיליליטר"
@@ -78,8 +79,8 @@ function Fluidingredients() {
         </select>
       </form>
       {calculation ? (
-        <p>
-          <span>מספר כוסות:</span> <span>{wetIngredient}</span>
+        <p className="outcomeWet">
+          <span>מספר כוסות:</span> <span>{fixedNum}</span>
         </p>
       ) : (
         <p></p>

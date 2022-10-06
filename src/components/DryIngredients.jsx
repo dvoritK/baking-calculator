@@ -4,9 +4,10 @@ import "./DryIngredients.css";
 
 function DryIngredients() {
   let [inputValue, setInputValue] = useState("");
-  let [cupConvertion, setCupConvertion] = useState("");
+  let [cupDryConvertion, setCupDryConvertion] = useState("");
   let [calculation, setCalculation] = useState(false);
   let ingredients = $("#dryIngredient").val();
+  let fixedNumDry = (Math.round(cupDryConvertion * 100) / 100).toFixed(2);
 
   function handleChange(event) {
     let amount = event.target.value;
@@ -17,26 +18,26 @@ function DryIngredients() {
     switch (ingredients) {
       case "coconut":
       case "almonds":
-        setCupConvertion(inputValue / 100);
+        setCupDryConvertion(inputValue / 100);
         break;
       case "sugarPowder":
-        setCupConvertion(inputValue / 120);
+        setCupDryConvertion(inputValue / 120);
         break;
       case "whiteFlour":
       case "cornflour":
       case "cocoa":
-        setCupConvertion(inputValue / 140);
+        setCupDryConvertion(inputValue / 140);
         break;
       case "wholeWheatFlour":
-        setCupConvertion(inputValue / 125);
+        setCupDryConvertion(inputValue / 125);
         break;
       case "semolina":
       case "demeraraSugar":
       case "whiteSugar":
-        setCupConvertion(inputValue / 200);
+        setCupDryConvertion(inputValue / 200);
         break;
       case "brownSugar":
-        setCupConvertion(inputValue / 240);
+        setCupDryConvertion(inputValue / 240);
         break;
       default:
         console.log("please type amount");
@@ -54,8 +55,8 @@ function DryIngredients() {
   return (
     <div className="DryIngredients">
       <h2 className="heading-dry">חומרים יבשים</h2>
-      <form onSubmit={handleClick}>
-        <input type="submit" value="חשב" className="btn-calc input-box" />
+      <form onSubmit={handleClick} className="form-dry-ing">
+        <input type="submit" value="חשב" className="btn-calc-dry input-box" />
         <input
           type="number"
           placeholder="כמות בגרמים"
@@ -71,7 +72,6 @@ function DryIngredients() {
           <option value="demeraraSugar">סוכר דמררה</option>
           <option value="brownSugar">סוכר חום כוס דחוסה</option>
           <option value="semolina">סולת</option>
-          <option value="pudding">פודינג</option>
           <option value="coconut">קוקוס</option>
           <option value="cornflour">קורנפלור</option>
           <option value="whiteFlour">קמח לבן</option>
@@ -82,8 +82,8 @@ function DryIngredients() {
         </select>
       </form>
       {calculation ? (
-        <p>
-          <span>מספר כוסות:</span> <span>{cupConvertion}</span>
+        <p className="outcomeDry">
+          <span>מספר כוסות:</span> <span>{fixedNumDry}</span>
         </p>
       ) : (
         <p></p>

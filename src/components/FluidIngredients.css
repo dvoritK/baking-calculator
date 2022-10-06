@@ -1,4 +1,4 @@
-.btn-calc {
+.btn-calc-fluid {
   background-color: #b15e2b;
   color: #f6ede7;
   font-size: 2rem;
@@ -7,10 +7,48 @@
 .heading-fluid {
   color: #76350d;
 }
+
 .input-box {
   margin: 1rem 0 1rem 1rem;
   padding: 1rem 2rem;
   border-radius: 3rem;
   border: none;
   font-size: 1.6rem;
+}
+
+@media (max-width: 75em) {
+  .heading-fluid {
+    color: #f6ede7;
+    text-shadow: 1px 1px 1px #220f04;
+  }
+  .input-box {
+    margin: 1.5rem 0 1.5rem 1.5rem;
+    border: 2px solid #f6ede7;
+  }
+  .btn-calc-fluid {
+    border: 2px solid #f6ede7;
+  }
+
+  .outcomeWet {
+    color: #f6ede7;
+  }
+}
+@media (max-width: 44em) {
+  .input-box {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 40em) {
+  .form-fluid-ing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn-calc-fluid {
+    grid-row: 2/ 3;
+    grid-column: -3/-1;
+    width: 35%;
+    justify-self: center;
+  }
 }

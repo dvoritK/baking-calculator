@@ -38,3 +38,9 @@
     transform: rotate(360deg);
   }
 }
+@media (max-width: 75em) {
+  .App {
+    text-align: center;
+    margin-right: 1rem;
+  }
+}

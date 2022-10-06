@@ -11,9 +11,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("baking-background.jpg");
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (max-width: 75em) {
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("baking-background.jpg");
+    max-width: 100%;
+  }
+}
+@media (max-width: 56em) {
+  body {
+    font-size: 1.6rem;
+  }
 }
